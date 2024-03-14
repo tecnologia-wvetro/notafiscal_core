@@ -33,7 +33,7 @@ class WSNotaConsulta implements DFLog {
 
         final OMElement omElementRetorno = this.efetuaConsulta(omElementConsulta, chaveDeAcesso);
         this.getLogger().debug(omElementRetorno.toString());
-        return omElementRetorno.toString();
+        return omElementRetorno.toString().replace("id","Id");
     }
 
     private OMElement efetuaConsulta(final OMElement omElementConsulta, final String chaveDeAcesso) throws Exception {

@@ -37,7 +37,7 @@ public class WSFacade {
     private final WSIncluirDFe wsIncluirDFe;
     private final WSPagamentoTransporte wsPagamentoTransporte;
 
-//	private final WSRecepcaoLoteRetorno wsRecepcaoLoteRetorno;
+    //	private final WSRecepcaoLoteRetorno wsRecepcaoLoteRetorno;
     public WSFacade(final MDFeConfig config) throws IOException, KeyManagementException, UnrecoverableKeyException, KeyStoreException, NoSuchAlgorithmException, CertificateException {
         Protocol.registerProtocol("https", new Protocol("https", new DFSocketFactory(config), 443));
         this.wsStatusConsulta = new WSStatusConsulta(config);
@@ -142,7 +142,7 @@ public class WSFacade {
      * o sefaz
      */
     public MDFeRetorno encerramento(final String chaveAcesso, final String numeroProtocolo,
-            final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
+                                    final String codigoMunicipio, final LocalDate dataEncerramento, final DFUnidadeFederativa unidadeFederativa) throws Exception {
         return this.wsEncerramento.encerraMdfe(chaveAcesso, numeroProtocolo, codigoMunicipio, dataEncerramento, unidadeFederativa);
     }
 
